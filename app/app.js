@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.home',
-  'myApp.register'
+  'myApp.register',
+  'myApp.welcome'
 ]).
 config(['$routeProvider', function($routeProvider) {
 	   $routeProvider.when('/home', {
@@ -15,6 +16,9 @@ config(['$routeProvider', function($routeProvider) {
         templateUrl: 'register/register.html',
         controller: 'RegisterCtrl',
         controllerAs: 'register'
-    });
-  $routeProvider.otherwise({redirectTo: '/home'});
+    }).when('/welcome', {
+        templateUrl: 'welcome/welcome.html',
+        controller: 'WelcomeCtrl',
+        controllerAs: 'welcome'
+    }).otherwise({redirectTo: '/home'});
 }]);

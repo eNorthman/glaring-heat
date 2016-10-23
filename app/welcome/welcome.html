@@ -31,7 +31,7 @@
                 <p class="list-group-item-text" ng-bind="article.post"></p>
                 <span class="pull-right">
                     <button class="btn btn-xs btn-info" ng-click="welcome.editPost(article.$id)" data-target="#editModal">EDIT</button>
-                    <button class="btn btn-xs btn-warning">DELETE</button>
+                    <button class="btn btn-xs btn-warning" ng-click="welcome.delete(article.$id)">DELETE</button>
                 </span>
             </a>
         </div>

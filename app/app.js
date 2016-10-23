@@ -8,7 +8,8 @@ var myApp = angular.module('myApp', [
   'myApp.register',
   'myApp.welcome',
   'myApp.addPost',
-  'myApp.modal'
+  'myApp.modal',
+  'myApp.dmodal'
 ]);
 myApp.
 config(['$routeProvider', function($routeProvider) {

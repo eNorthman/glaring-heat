@@ -26,8 +26,10 @@
                 <p ng-show="regForm.password.$dirty && regForm.password.$error.minlength">Min password length is 8 characters.</p>
                 <p style="color:red;" ng-show="register.regError">{{register.regErrorMessage}}</p>
             </div>
-             <a href=""> Sign In</> <br/>
-            <button type="button" ng-click="register.signUp();" ng-disabled="!register.user.email || !register.user.password" class="btn btn-lg btn-primary btn-block">Register</button>
+            <label>
+             <a href="#/home"> Sign In</a>
+            </label>
+           <button ladda="register.login.loading" data-style="expand-right" ng-disabled="!register.user.email || !register.user.password" type="button" ng-click="register.signUp();" class="btn btn-lg segoe-ui-light ladda-button btn-primary btn-block"><span class="ladda-label">Sign In</span></button>
         </form>
     </div>
 </body>

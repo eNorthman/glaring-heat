@@ -2,15 +2,18 @@
  
 angular.module('myApp.addPost', [])
  
-.controller('AddPostCtrl', ['$scope','$firebase', 'baseUrl','$location', function($scope, $firebase, baseUrl, $location) {
-    var firebaseObj = new Firebase(baseUrl + '/Articles');
-    var fb = $firebase(firebaseObj);
+.controller('AddPostCtrl', ['$scope','$firebase', 'baseUrl','$location', 'CommonProp', function($scope, $firebase, baseUrl, $location, CommonProp) {
+    let firebaseObj = new Firebase(baseUrl + '/Articles');
+    let fb = $firebase(firebaseObj);
+    let user = CommonProp.getUser();
     this.AddPost = function () {
         var title = this.article.title;
         var post = this.article.post;
         fb.$push({
             title: title,
-            post: post
+            post: post,
+            emailId: user,
+            '.priority': user
         }).then(function(ref) {
             console.log(ref);
             $location.path('/welcome');
